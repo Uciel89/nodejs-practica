@@ -1,10 +1,12 @@
 const {Sequelize} = require('sequelize');
 
+require('dotenv').config();
+
 // Parametros de conección a nuestra base de datos
-const databese = 'codetunes'; 
-const username = 'root';
-const password = '231Redragon564.';
-const host = 'localhost';
+const databese = process.env.NAME_DB; 
+const username = process.env.USERNAME_DB;
+const password = process.env.PASSWORD_DB;
+const host = process.env.HOST_DB;
 
 // Objeto sequlize para autenticarnos en nuestra BD
 const sequelize = new Sequelize(databese, username, password, {
